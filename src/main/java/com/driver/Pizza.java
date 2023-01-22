@@ -9,9 +9,9 @@ public class Pizza {
     private int cheese;
     private int toppings;
 
-   private boolean isExtraCheeseAdded;
-   private boolean isExtraToppingsAdded;
-   private boolean isTakeAwayAdded;
+    boolean isExtraCheeseAdded;
+    boolean isExtraToppingsAdded;
+    boolean isTakeAwayAdded;
    boolean isBillGenerated;
 
 
@@ -19,24 +19,27 @@ public class Pizza {
     public Pizza(Boolean isVeg) {
         this.isVeg = isVeg;
         // your code goes here
-        this.isBillGenerated=false;
-        this.isExtraCheeseAdded=false;
-        this.isExtraToppingsAdded=false;
-        this.isTakeAwayAdded=false;
-        this.bill ="";
+        this.isBillGenerated = false;
+        this.isExtraCheeseAdded = false;
+        this.isExtraToppingsAdded = false;
+        this.isTakeAwayAdded = false;
+        this.bill = "";
+
         if (isVeg) {
             this.price = 300;
             this.toppings = 70;
         }
         else{
-            this.price=400;
-            this.toppings=120;
+            this.price = 400;
+            this.toppings = 120;
         }
-        this.cheese=80;
-        this.bill += "Base price of The Pizza: "+ this.price+"\n";
+        this.cheese = 80;
+
+        this.bill += "Base price of The Pizza: "+this.price+"\n";
     }
 
     public int getPrice(){
+
         return this.price;
     }
 
@@ -44,8 +47,7 @@ public class Pizza {
         // your code goes here
         if(!isExtraCheeseAdded){
             this.price= this.price + cheese;
-            this.isExtraCheeseAdded= true;
-
+            this.isExtraCheeseAdded = true;
         }
     }
 
@@ -53,7 +55,7 @@ public class Pizza {
         // your code goes here
         if(!isExtraToppingsAdded){
             this.price=this.price + toppings;
-            this.isExtraToppingsAdded=true;
+            isExtraToppingsAdded = true;
         }
     }
 
@@ -61,7 +63,7 @@ public class Pizza {
         // your code goes here
         if(!isTakeAwayAdded){
             this.price += 20;
-            this.isTakeAwayAdded=true;
+            isTakeAwayAdded=true;
 
         }
     }
@@ -75,6 +77,7 @@ public class Pizza {
                 this.bill += "Extra Toppings Added: "+this.toppings+"\n";
             if(isTakeAwayAdded)
                 this.bill += "Paperbag Added: "+"20"+"\n";
+
             this.bill += "Total Price: "+this.price+"\n";
             isBillGenerated = true;
         }
