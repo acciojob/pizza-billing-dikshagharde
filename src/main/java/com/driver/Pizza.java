@@ -12,7 +12,7 @@ public class Pizza {
     boolean isExtraCheeseAdded;
     boolean isExtraToppingsAdded;
     boolean isTakeAwayAdded;
-   boolean isBillGenerated;
+    boolean isBillGenerated;
 
 
 
@@ -35,7 +35,7 @@ public class Pizza {
         }
         this.cheese = 80;
 
-        this.bill += "Base price of The Pizza: "+this.price+"\n";
+        this.bill += "Base Price Of The Pizza: "+this.price+"\n";
     }
 
     public int getPrice(){
@@ -63,7 +63,7 @@ public class Pizza {
         // your code goes here
         if(!isTakeAwayAdded){
             this.price += 20;
-            isTakeAwayAdded=true;
+            isTakeAwayAdded = true;
 
         }
     }
